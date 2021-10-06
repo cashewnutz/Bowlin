@@ -3,8 +3,75 @@
 <title>Electro Flex Fitness</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <style>
+       /* Tab content - closed */
+         .tab-content {
+         max-height: 0;
+         -webkit-transition: max-height .35s;
+         -o-transition: max-height .35s;
+         transition: max-height .35s;
+         }
+         /* :checked - resize to full height */
+         .tab input:checked ~ .tab-content {
+         max-height: 100vh;
+         }
+         /* Label formatting when open */
+         .tab input:checked + label{
+         /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
+         font-size: 1.25rem; /*.text-xl*/
+         padding: 1.25rem; /*.p-5*/
+         border-left-width: 2px; /*.border-l-2*/
+         border-color: #6574cd; /*.border-indigo*/
+         background-color: #f8fafc; /*.bg-gray-100 */
+         color: #6574cd; /*.text-indigo*/
+         }
+         /* Icon */
+         .tab label::after {
+         float:right;
+         right: 0;
+         top: 0;
+         display: block;
+         width: 1.5em;
+         height: 1.5em;
+         line-height: 1.5;
+         font-size: 1.25rem;
+         text-align: center;
+         -webkit-transition: all .35s;
+         -o-transition: all .35s;
+         transition: all .35s;
+         }
+         /* Icon formatting - closed */
+         .tab input[type=checkbox] + label::after {
+         content: "+";
+         font-weight:bold; /*.font-bold*/
+         border-width: 1px; /*.border*/
+         border-radius: 9999px; /*.rounded-full */
+         border-color: #b8c2cc; /*.border-grey*/
+         }
+         .tab input[type=radio] + label::after {
+         content: "\25BE";
+         font-weight:bold; /*.font-bold*/
+         border-width: 1px; /*.border*/
+         border-radius: 9999px; /*.rounded-full */
+         border-color: #b8c2cc; /*.border-grey*/
+         }
+         /* Icon formatting - open */
+         .tab input[type=checkbox]:checked + label::after {
+         transform: rotate(315deg);
+         background-color: #6574cd; /*.bg-indigo*/
+         color: #f8fafc; /*.text-grey-lightest*/
+         }
+         .tab input[type=radio]:checked + label::after {
+         transform: rotateX(180deg);
+         background-color: #6574cd; /*.bg-indigo*/
+         color: #f8fafc; /*.text-grey-lightest*/
+         }
+  </style>
 </head>
 <body>
 
@@ -209,7 +276,7 @@
         </div>
       </section>
 
-      <!-- Trainers Section -->
+         <!-- Trainers Section -->
       <section id="pricing" class="pt-20 pb-48">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap justify-center text-center mb-24">
@@ -305,7 +372,122 @@
           
         </div>
       </section>
+      
+      
+      <!-- FAQ fSection -->
+      <section id="faq" class="pt-20 pb-48">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-center text-center mb-24">
+            <div class="w-full lg:w-6/12 px-4">
+              <h2 class="text-4xl font-semibold uppercase">
+                Frequently Asked Questions
+              </h2>
+              <p class="text-lg leading-relaxed m-4">
+                Find answers to Electro Flex Fitness most often asked questions
+              </p>
+            </div>
+          </div>
+    <div class="w-full md:w-3/5 mx-auto p-8">
+         <p>Expand multiple questions at once by <strong>clicking</strong></p>
+         <div class="shadow-md">
+            <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-one">What is EMS?</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">Electrical Muscle Stimulation (EMS) is a training method that delivers electrical impulses that stimulate
+muscle contractions.  EMS amplifies the natural process of muscle stimulation to encourage your
+muscles to work harder. Depending on the pulse frequency, duration of contraction, duration of rest,
+and length of training session, we can simulate various types of muscle “work”.</p>
+               </div>
+            </div>
+            <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-two">How does EMS training work?</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">At Electro Flex Fitness, our trained personal trainers lead each private (or semi-private) session.  After reviewing all
+contraindications, we begin with a body scan that reports a series of biometrics, from body fat
+percentage to resting metabolic rate. It gives you and your trainer a comprehensive picture of your
+current state to monitor future progress and helps set end goal.
+ 
+The trainer fits you in a Electro Flex Fitness-issued workout clothing and a suit which is fitted with carbon-fiber
+electrodes. The trainer mists some water on your suit’s electrodes to make the signal more conducive
+and more effective.
+ 
+The suit is then coupled with the battery-operated EMS machine.  The trainer monitors and adjusts the
+electrical pulses to your level of comfort for each muscle group.  Once the levels are set, then the trainer
+will lead you through 20 minutes of workout which includes series of basic movements, without using
+any weights. Throughout the 20-minute workout, the trainer may adjust the electrical pulses
+amplification up or down, based on your level of comfort and threshold.
+ 
 
+Your actual workout will be low-impact and deceptively easy. As the electrical impulses continue, you
+will feel a tingling sensation across your muscle groups; you will also feel yourcontracting at the same
+time.
+ 
+The trainer will direct you to time your breathing to each impulse (muscle contraction), not lock your
+knees, and squeeze the muscle group you want to focus on during the exercise.  The trainer will also
+challenge you to take on more resistance.  It will feel like you’re doing so much more than simply
+squatting, lunging, and reaching overhead.
+ 
+Within 20 minutes, we will have stimulated same number of muscles as a typical 60-90 minutes of
+conventional workout.</p>
+               </div>
+            </div>
+            <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-three">When and how will I see results?</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">Most clients see results after 1 sessions a week and after 4 to 6 weeks. With a 20-minute training
+duration, FITOPIA EMS training can stimulate the same muscles as 60-90 minutes of conventional
+training, that is dependent on smaller muscle group training, using a sequence of exercises.
+Our clients feel a difference after their first EMS session. Below are the typical responses from our
+clients:
+ 
+24–48 HOURS: After a day or two, you’ll feel some muscle stiffness, which is normal and is indicative of
+your body’s recovery process.
+ 
+4 WEEKS: Within a period of about 4 weeks, you might feel stronger as you improve your muscle mass.
+ 
+1–2 MONTHS: After roughly 6 to 8 sessions (6 to 8 weeks) you may not only feel, but also see a visible
+difference from the EMS training in the form of gradually increased muscle formation and body
+composition change (depending on your diet). EMS training should be done regularly to ensure and
+maintain optimal results.</p>
+               </div>
+           </div>
+               <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0" id="tab-multi-four" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-four">How often can I do EMS?</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">You can do EMS every 3-4 days (twice a week) due to the high frequency of the impulses. We
+recommend taking 24 hours of rest post session.</p>
+               </div>
+           </div>
+               <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0" id="tab-multi-five" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-five">Can anyone do EMS training?</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">EMS has been scientifically proven to be effective for people of different fitness levels and
+different age groups.  An athlete can train next to a physically inactive client and both will receive
+challenging workouts that fit their level of exercise.  Similarly, a younger adult and an older adult can
+train next to each other and training can be geared with not only intensity-level but also with impact-
+level.
+ 
+Just like conventional exercises, our EMS training also has certain contraindications.  We require our
+clients be over the age of 18 (14+ with Parental Consent).  Also, our EMS training is not advisable for
+certain groups who should not be exposed to physical stress or engage in sports; please refer to the
+consent forms for the full list.  Also, pregnant clients are not able to train with EMS. We always
+recommend speaking with your General Practitioner if you are unsure.</p>
+               </div>
+           </div>
+            </div>
+         </div>
+      </div>
+          
+        </div>
+      </section>
+
+      
+      
       <!-- Contact Header Section -->
       <section class="pb-20 relative block bg-black text-white">
         <div
